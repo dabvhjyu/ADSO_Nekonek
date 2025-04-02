@@ -19,9 +19,6 @@
 -- Table structure for table `biblioteca_series`
 --
 
-DROP TABLE IF EXISTS `biblioteca_series`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `biblioteca_series` (
   `biblioteca_id` int NOT NULL,
   `serie_id` int NOT NULL,
@@ -44,11 +41,7 @@ UNLOCK TABLES;
 
 --
 -- Table structure for table `bibliotecas_usuarios`
---
 
-DROP TABLE IF EXISTS `bibliotecas_usuarios`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `bibliotecas_usuarios` (
   `biblioteca_id` int NOT NULL AUTO_INCREMENT,
   `usuario_id` int NOT NULL,
