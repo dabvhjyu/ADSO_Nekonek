@@ -166,9 +166,6 @@ UNLOCK TABLES;
 -- Table structure for table `reportes`
 --
 
-DROP TABLE IF EXISTS `reportes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `reportes` (
   `reporte_id` int NOT NULL AUTO_INCREMENT,
   `serie_id` int DEFAULT NULL,
@@ -208,9 +205,7 @@ UNLOCK TABLES;
 -- Table structure for table `seguidores`
 --
 
-DROP TABLE IF EXISTS `seguidores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `seguidores` (
   `usuario_id` int NOT NULL,
   `serie_id` int NOT NULL,
