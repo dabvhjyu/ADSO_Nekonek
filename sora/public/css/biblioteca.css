@@ -87,9 +87,20 @@
   padding: 0.5em 0.8em;
 }
 
+/* Modificación del cuerpo de la tarjeta para usar fondo morado oscuro */
 .serie-card .card-body {
   border-top: 2px solid var(--accent-purple);
   padding: 1rem;
+  background-color: var(--darker-purple);
+  color: var(--text-light, #f5f5f5);
+}
+
+/* Asegurar que TODA la tarjeta tenga fondo morado, incluyendo la parte inferior */
+.serie-card, 
+.serie-card .card-footer,
+.serie-card > div:last-child {
+  background-color: var(--light-medium-purple) !important;
+  color: white !important;
 }
 
 .serie-card .card-title {
@@ -99,6 +110,17 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: white;
+}
+
+/* Asegurar que la descripción tenga color claro */
+.serie-descripcion {
+  color: var(--text-light, #f5f5f5);
+}
+
+/* Cambiar el color del enlace "Leer más" para que sea visible */
+.leer-mas {
+  color: var(--light-purple) !important;
 }
 
 /* Estilos para la paginación */
@@ -206,10 +228,11 @@
   --darker-purple: #0f061a;
   --dark-purple: #1a0d2a;
   --medium-purple: #261331;
-  --light-medium-purple: #3a1d4a;
+  --light-medium-purple: #261331;
   --accent-purple: rgb(52, 18, 72);
-  ;
   --light-purple: #d4c1f0;
+  --text-light: #f5f5f5;
+  --text-muted: #a8a8a8;
 }
 
 /* Estilos para los elementos de formulario */
@@ -241,6 +264,10 @@
   background-color: var(--accent-purple) !important;
 }
 
+.bg-light-medium-purple {
+  background-color: var(--light-medium-purple) !important;
+}
+
 .text-light-purple {
   color: var(--light-purple) !important;
 }
@@ -253,4 +280,9 @@
 /* Ajustar el espaciado de la sección de búsqueda */
 .card.bg-dark-purple {
   margin-top: 1rem;
+}
+
+/* Asegurar que el gradiente oscuro funcione correctamente */
+.bg-dark-gradient {
+  background: linear-gradient(to top, rgba(15, 6, 26, 0.95) 0%, rgba(15, 6, 26, 0.7) 50%, rgba(15, 6, 26, 0.4) 100%);
 }

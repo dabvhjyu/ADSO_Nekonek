@@ -15,10 +15,18 @@ class SerieController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $series = crear_serie::all();
-        return view("series.index", compact("series"));
+{
+    // Verificación de autenticación + rol (más robusto)
+    if (!auth()->check() || auth()->user()->rol_id_fk != 3) {
+        abort(403, 'Acceso no autorizado. Se requiere rol de editor');
     }
+
+    // Obtener datos con paginación (mejor performance)
+    $series = crear_serie::paginate(10); // 10 items por página
+    
+    return view("series.index", compact("series"));
+}
+
 
     public function biblioteca()
     {
@@ -26,6 +34,19 @@ class SerieController extends Controller
         return view('series.biblioteca', compact("series"));
 
     }
+
+    public function principal()
+    {
+        $series = crear_serie::all();
+        return view('series.principal', compact("series"));
+
+    }
+
+    
+    
+
+    
+
 
 
 

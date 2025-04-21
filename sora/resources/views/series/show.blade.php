@@ -1,5 +1,9 @@
+@extends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,18 +11,20 @@
     <link rel="stylesheet" href="{{ asset('css/serieshow.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <main class="main-content">
         <!-- Banner de la serie -->
         <div class="serie-banner">
             <div class="banner-overlay"></div>
-            <img src="/placeholder.svg?height=400&width=1200" alt="Banner de la serie" class="banner-img">
+            <img src="{{ asset('storage/' . $serie->miniatura_cuadrada) }}" alt="Banner de la serie" class="banner-img">
         </div>
 
         <!-- Información principal de la serie -->
         <div class="serie-info-container">
             <div class="serie-cover">
-                <img src="/placeholder.svg?height=400&width=225" {{ $serie->miniatura_vertical }}alt="Portada de la serie" class="cover-img">
+                <img src="{{ asset('storage/' . $serie->miniatura_vertical) }}"alt="Portada de la serie"
+                    class="cover-img">
                 <div class="serie-actions">
                     <button class="action-button follow-button">
                         <i class="fas fa-bookmark"></i> Seguir
@@ -28,26 +34,26 @@
                     </button>
                 </div>
             </div>
-            
+
             <div class="serie-details">
-            <div class="serie-header">
-                        <h1 class="serie-title">{{ $serie->titulo }}</h1>
-                        <span class="serie-subtitle">{{ $serie->subtitulo }}</span>
-                        <div class="serie-meta">
-                            <span class="serie-status">{{ $serie->estado_id }}</span>
-                            <span class="serie-genre">{{ $serie->genero_id }}</span>
-                            <div class="serie-rating">
-                                <i class="fas fa-star"></i>
-                                <span>4.8</span>
-                                <span class="rating-count">(1,245)</span>
-                            </div>
+                <div class="serie-header">
+                    <h1 class="serie-title">{{ $serie->titulo }}</h1>
+                    <span class="serie-subtitle">{{ $serie->subtitulo }}</span>
+                    <div class="serie-meta">
+                        <span class="serie-status">{{ $serie->estado_id }}</span>
+                        <span class="serie-genre">{{ $serie->genero_id }}</span>
+                        <div class="serie-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <span class="rating-count">(1,245)</span>
                         </div>
                     </div>
-                    
-                    <div class="serie-description">
-                        <p>{{ $serie->descripcion }}</p>
-                    </div>
-                
+                </div>
+
+                <div class="serie-description">
+                    <p>{{ $serie->descripcion }}</p>
+                </div>
+
                 <div class="serie-stats">
                     <div class="stat-item">
                         <i class="fas fa-eye"></i>
@@ -70,7 +76,7 @@
                         <span class="stat-label">Capítulos</span>
                     </div>
                 </div>
-                
+
                 <div class="serie-creator">
                     <div class="creator-info">
                         <img src="/placeholder.svg?height=50&width=50" alt="Avatar del creador" class="creator-avatar">
@@ -100,7 +106,7 @@
                     <i class="fas fa-film"></i> Animación
                 </button>
             </div>
-            
+
             <!-- Contenido de las secciones -->
             <div class="section-content">
                 <!-- Sección de Lectura -->
@@ -115,7 +121,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="chapters-list">
                         <div class="chapter-item">
                             <div class="chapter-info">
@@ -128,7 +134,7 @@
                                 <span class="chapter-likes"><i class="fas fa-heart"></i> 3.8K</span>
                             </div>
                         </div>
-                        
+
                         <div class="chapter-item">
                             <div class="chapter-info">
                                 <span class="chapter-number">Capítulo 177</span>
@@ -140,7 +146,7 @@
                                 <span class="chapter-likes"><i class="fas fa-heart"></i> 5.2K</span>
                             </div>
                         </div>
-                        
+
                         <div class="chapter-item">
                             <div class="chapter-info">
                                 <span class="chapter-number">Capítulo 176</span>
@@ -152,13 +158,13 @@
                                 <span class="chapter-likes"><i class="fas fa-heart"></i> 6.3K</span>
                             </div>
                         </div>
-                        
+
                         <div class="load-more">
                             <button class="load-more-button">Cargar más capítulos</button>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Sección de Dibujo -->
                 <div class="section-panel" id="dibujo-panel">
                     <div class="section-header">
@@ -170,7 +176,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="gallery-grid">
                         <div class="gallery-item">
                             <img src="/placeholder.svg?height=200&width=200" alt="Dibujo 1" class="gallery-img">
@@ -182,7 +188,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="gallery-item">
                             <img src="/placeholder.svg?height=200&width=200" alt="Dibujo 2" class="gallery-img">
                             <div class="gallery-overlay">
@@ -193,7 +199,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="gallery-item">
                             <img src="/placeholder.svg?height=200&width=200" alt="Dibujo 3" class="gallery-img">
                             <div class="gallery-overlay">
@@ -204,7 +210,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="gallery-item">
                             <img src="/placeholder.svg?height=200&width=200" alt="Dibujo 4" class="gallery-img">
                             <div class="gallery-overlay">
@@ -215,10 +221,10 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
-                
+
                 <!-- Sección de Animación -->
                 <div class="section-panel" id="animacion-panel">
                     <div class="section-header">
@@ -231,7 +237,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="episodes-grid">
                         <div class="episode-item">
                             <div class="episode-thumbnail">
@@ -250,7 +256,7 @@
                                 <div class="episode-date">Publicado: 15 de enero, 2023</div>
                             </div>
                         </div>
-                        
+
                         <div class="episode-item">
                             <div class="episode-thumbnail">
                                 <img src="/placeholder.svg?height=180&width=320" alt="Episodio 2" class="episode-img">
@@ -268,7 +274,7 @@
                                 <div class="episode-date">Publicado: 22 de enero, 2023</div>
                             </div>
                         </div>
-                        
+
                         <div class="episode-item">
                             <div class="episode-thumbnail">
                                 <img src="/placeholder.svg?height=180&width=320" alt="Episodio 3" class="episode-img">
@@ -286,7 +292,7 @@
                                 <div class="episode-date">Publicado: 29 de enero, 2023</div>
                             </div>
                         </div>
-                        
+
                         <div class="load-more">
                             <button class="load-more-button">Cargar más episodios</button>
                         </div>
@@ -294,39 +300,17 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Sección de series relacionadas -->
         <div class="related-series">
             <h2 class="section-title">Series relacionadas</h2>
             <div class="series-carousel">
-                <div class="series-item">
-                    <img src="/placeholder.svg?height=300&width=200" alt="Serie relacionada 1" class="series-img">
-                    <div class="series-overlay">
-                        <div class="series-title">The Beginning After The End</div>
-                        <div class="series-genre">Fantasía</div>
-                    </div>
-                </div>
                 
-                <div class="series-item">
-                    <img src="/placeholder.svg?height=300&width=200" alt="Serie relacionada 2" class="series-img">
-                    <div class="series-overlay">
-                        <div class="series-title">Tower of God</div>
-                        <div class="series-genre">Aventura</div>
-                    </div>
-                </div>
-                
-                <div class="series-item">
-                    <img src="/placeholder.svg?height=300&width=200" alt="Serie relacionada 3" class="series-img">
-                    <div class="series-overlay">
-                        <div class="series-title">Omniscient Reader's Viewpoint</div>
-                        <div class="series-genre">Acción</div>
-                    </div>
-                </div>
-                
+
                 <div class="series-item">
                     <img src="/placeholder.svg?height=300&width=200" alt="Serie relacionada 4" class="series-img">
                     <div class="series-overlay">
-                        <div class="series-title">Nano Machine</div>
+                        <div class="series-title">Serie de prueba</div>
                         <div class="series-genre">Sci-Fi</div>
                     </div>
                 </div>
@@ -336,4 +320,8 @@
 
     <script src="{{ asset('js/serieshow.js') }}"></script>
 </body>
+
 </html>
+
+
+@endsection

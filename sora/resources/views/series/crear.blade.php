@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,7 +24,7 @@
                         <div class="form-column">
                             <!-- Portada vertical -->
                             <div class="form-group">
-                                <label for="miniatura_vertical">Portada (Imagen Vertical)</label>
+                                <label for="miniatura_vertical">Portada</label>
                                 <div class="image-upload-container" id="cover-container">
                                     <div class="image-upload-placeholder" id="cover-placeholder">
                                         <i class="fas fa-image"></i>
@@ -32,25 +35,25 @@
                                     <button type="button" class="remove-image-btn hidden" id="remove-cover">
                                         <i class="fas fa-times"></i>
                                     </button>
-                                    <input name="miniatura_vertical" type="file" id="miniatura_vertical" accept="image/*" class="hidden">
+                                    <input name="miniatura_vertical" type="file" id="miniatura_vertical" class="hidden" >
                                 </div>
                             </div>
 
 
                             <!-- Miniatura cuadrada -->
                             <div class="form-group">
-                                <label for="miniatura_cuadrada">Miniatura (Imagen Cuadrada)</label>
+                                <label for="miniatura_cuadrada">Fondo</label>
                                 <div class="thumbnail-upload-container" id="thumbnail-container">
                                     <div class="image-upload-placeholder" id="thumbnail-placeholder">
                                         <i class="fas fa-image"></i>
                                         <p>Miniatura</p>
-                                        <p class="size-hint">200x200px</p>
+                                        <p class="size-hint">820x312px</p>
                                     </div>
                                     <img id="thumbnail-preview" class="image-preview hidden" src="#" alt="Vista previa de miniatura">
                                     <button type="button" class="remove-image-btn hidden" id="remove-thumbnail">
                                         <i class="fas fa-times"></i>
                                     </button>
-                                    <input name="miniatura_cuadrada" type="file" id="miniatura_cuadrada" accept="image/*" class="hidden">
+                                    <input name="miniatura_cuadrada" type="file" id="miniatura_cuadrada"  class="hidden">
                                 </div>
                             </div>
                         </div>
@@ -120,3 +123,5 @@
     <script src="{{ asset('js/subir.js') }}"></script>
 </body>
 </html>
+
+@endsection

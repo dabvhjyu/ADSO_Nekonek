@@ -1,0 +1,256 @@
+/* Estilos personalizados para la biblioteca */
+.form-control:focus {
+  background-color: #261331 !important;
+  /* Morado claro */
+  color: white !important;
+  /* Texto blanco */
+  outline: none;
+  /* Elimina el borde predeterminado */
+}
+
+/* Hero section */
+.biblioteca-hero {
+  background: linear-gradient(135deg, var(--darker-purple) 0%, var(--medium-purple) 100%);
+  padding: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(166, 123, 214, 0.2);
+  margin-bottom: 0;
+}
+
+.biblioteca-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/placeholder.svg?height=100&width=100") center / cover;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.biblioteca-hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(248, 248, 248, 0.933);
+}
+
+.biblioteca-hero p {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+/* Estilos para las tarjetas de series */
+.serie-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--darker-purple);
+}
+
+.serie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.serie-card .card-img-top {
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.serie-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.serie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, var(--darker-purple) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.serie-card .badge {
+  z-index: 2;
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+}
+
+.serie-card .card-body {
+  border-top: 2px solid var(--accent-purple);
+  padding: 1rem;
+}
+
+.serie-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Estilos para la paginación */
+.pagination {
+  margin-top: 3rem;
+}
+
+.pagination .page-link {
+  color: white;
+  background-color: var(--dark-purple);
+  border-color: var(--medium-purple);
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--accent-purple);
+  border-color: var(--accent-purple);
+  color: white;
+  font-weight: 600;
+}
+
+.pagination .page-link:hover {
+  background-color: var(--medium-purple);
+  color: white;
+}
+
+.btn-morado {
+  background-color: #8f2fff;
+  color: #fff;
+  border: none;
+}
+
+.btn-morado:hover {
+  background-color: #6c1bbf;
+  color: #fff;
+}
+
+
+/* Estilos para los filtros activos */
+.filtro-tag {
+  background-color: var(--medium-purple);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(166, 123, 214, 0.3);
+}
+
+.filtro-tag .btn-close {
+  width: 0.5em;
+  height: 0.5em;
+  margin-left: 0.5rem;
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* Estilos para los selects */
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23a67bd6' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+}
+
+.form-select:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 0.25rem rgba(249, 247, 250, 0.25);
+}
+
+/* Estilos para los inputs */
+.form-control:focus {
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 0 0.25rem rgba(252, 252, 253, 0.911);
+}
+
+/* Estilos para cuando no hay resultados */
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 5rem 0;
+  color: var(--light-purple);
+  background-color: var(--darker-purple);
+  border-radius: 0.5rem;
+  margin: 2rem 0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .biblioteca-hero h1 {
+    font-size: 2rem;
+  }
+
+  .biblioteca-hero p {
+    font-size: 1rem;
+  }
+
+  .serie-card .card-img-top {
+    height: 220px;
+  }
+}
+
+/* Asegurar que los colores se apliquen correctamente */
+
+
+:root {
+  --darker-purple: #0f061a;
+  --dark-purple: #1a0d2a;
+  --medium-purple: #261331;
+  --light-medium-purple: #3a1d4a;
+  --accent-purple: rgb(52, 18, 72);
+  ;
+  --light-purple: #d4c1f0;
+}
+
+/* Estilos para los elementos de formulario */
+.form-control,
+.form-select,
+.btn-accent-purple {
+  background-color: var(--medium-purple);
+  color: white;
+  border: 1px solid var(--accent-purple);
+}
+
+.btn-accent-purple {
+  background-color: var(--accent-purple);
+}
+
+.bg-dark-purple {
+  background-color: var(--dark-purple) !important;
+}
+
+.bg-darker-purple {
+  background-color: var(--darker-purple) !important;
+}
+
+.bg-medium-purple {
+  background-color: var(--medium-purple) !important;
+}
+
+.bg-accent-purple {
+  background-color: var(--accent-purple) !important;
+}
+
+.text-light-purple {
+  color: var(--light-purple) !important;
+}
+
+/* Ajustar el espaciado de las tarjetas */
+.card {
+  margin-bottom: 0.5rem;
+}
+
+/* Ajustar el espaciado de la sección de búsqueda */
+.card.bg-dark-purple {
+  margin-top: 1rem;
+}

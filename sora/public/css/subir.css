@@ -3,8 +3,8 @@
   --darker-purple: #0f061a;
   --dark-purple: #1a0d2a;
   --medium-purple: #261331;
-  --light-medium-purple: #3a1d4a;
-  --accent-purple: rgb(52, 18, 72);
+  --light-medium-purple:#5c4577 ;
+  --accent-purple: #a67bd6;
   --light-purple: #d4c1f0;
   --text-light: #ffffff;
   --text-muted: #a8a8b3;
@@ -30,11 +30,7 @@ body {
   min-height: 100vh;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
+
 
 /* Contenedor del formulario */
 .form-container {
@@ -148,8 +144,8 @@ textarea {
 .thumbnail-upload-container {
   border: 2px dashed var(--light-medium-purple);
   border-radius: var(--border-radius);
-  height: 160px;
-  width: 160px;
+  height: 210px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -239,7 +235,7 @@ textarea {
 }
 
 .genre-badge:hover {
-  background-color: var(--light-medium-purple);
+  background-color: var(--accent-purple);  
   transform: translateY(-2px);
 }
 
@@ -263,7 +259,7 @@ textarea {
 }
 
 .genre-option:hover {
-  background-color: var(--light-medium-purple);
+  background-color: var(--accent-purple);  
   transform: translateY(-2px);
 }
 
@@ -291,12 +287,12 @@ textarea {
 }
 
 .btn-primary {
-  background-color: var(--accent-purple);
+  background-color:  var(--light-medium-purple);
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: var(--light-medium-purple);
+  background-color: var(--accent-purple);  
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -308,7 +304,7 @@ textarea {
 }
 
 .btn-outline:hover {
-  background-color: var(--light-medium-purple);
+  background-color: var(--accent-purple);  
   transform: translateY(-2px);
 }
 

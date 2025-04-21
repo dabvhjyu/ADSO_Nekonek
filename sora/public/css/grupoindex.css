@@ -1,14 +1,16 @@
 /* Global Styles */
 :root {
-    --dark-purple: #1a1025;
-    --medium-purple: #2d1f45;
-    --light-purple: #4a2b7d;
-    --accent-purple: #8a5cf7;
-    --bright-purple: #a67ffb;
-    --border-purple: #3d2a5c;
+    --dark-purple:   #0f061a;
+    --medium-purple: #211224;
+    --light-purple: #2e1733;
+    --accent-purple: #6a4692;
+    --bright-purple: #f6f5f7;
+    --border-purple: #491f53;
     --text-light: #ffffff;
-    --text-muted: #a8a8b3;
+    --text-muted: #a8a8b3;  
   }
+
+
   
   body {
     background-color: var(--dark-purple);
@@ -106,7 +108,7 @@
   }
   
   .upload-btn:hover {
-    background-color: var(--bright-purple);
+    background-color: #a67bd6;;
   }
   
   /* Tabs */
@@ -289,7 +291,7 @@
     white-space: nowrap;
     padding: 1rem;
     font-weight: 600;
-    background-color: #2f0c58;
+    background-color: #6a4692;
     color: white;
   }
   

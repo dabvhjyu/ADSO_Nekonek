@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -107,45 +110,43 @@
                     <!-- Ejemplo de tarjeta de serie -->
                     @foreach($series as $serie)
                         <div class="col">
-                            <a href="{{ route('serie.show', $serie->seriecreada_id) }}" class="text-decoration-none">
-                                <div class="card h-100 serie-card border-0 shadow-lg">
-                                    <!-- Header con imagen vertical -->
-                                    <div class="position-relative overflow-hidden" style="height: 300px;">
-                                        <img src="{{ asset('storage/' . $serie->miniatura_vertical) }}"
-                                            class="w-100 h-100 object-fit-cover" alt="{{ $serie->titulo }}">
+                        <a href="{{ route('serie.show', $serie->seriecreada_id) }}" class="text-decoration-none">
+                            <div class="card h-100 serie-card border-0 shadow-lg">
+                                <!-- Header con imagen vertical -->
+                                <div class="position-relative overflow-hidden" style="height: 300px;">
+                                    <img src="{{ asset('storage/' . $serie->miniatura_vertical) }}"
+                                        class="w-100 h-100 object-fit-cover" alt="{{ $serie->titulo }}">
 
-                                        <!-- Overlay con título y subtítulo -->
-                                        <div class="card-img-overlay d-flex flex-column justify-content-end p-0">
-                                            <div class="bg-dark-gradient p-3">
-                                                <h5 class="card-title text-white mb-1">{{ $serie->titulo }}</h5>
-                                                @if($serie->subtitulo)
-                                                    <p class="card-text text-light opacity-75 small mb-0">
-                                                        {{ $serie->subtitulo }}
-                                                    </p>
-                                                @endif
-                                            </div>
+                                    <!-- Overlay con título y subtítulo -->
+                                    <div class="card-img-overlay d-flex flex-column justify-content-end p-0">
+                                        <div class="bg-dark-gradient p-3">
+                                            <h5 class="card-title text-white mb-1">{{ $serie->titulo }}</h5>
+                                            @if($serie->subtitulo)
+                                                <p class="card-text text-light opacity-75 small mb-0">{{ $serie->subtitulo }}
+                                                </p>
+                                            @endif
                                         </div>
-
-                                        <!-- Badge de estado (asumiendo relación con tabla estados) -->
-
                                     </div>
 
-                                    <!-- Cuerpo principal -->
-                                    <div class="card-body bg-light">
-                                        <!-- Descripción completa con lector más/menos -->
-                                        <div class="mb-3">
-                                            <p class="card-text serie-descripcion"
-                                                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
-                                                {{ $serie->descripcion }}
-                                            </p>
-                                            <a href="#" class="text-primary small leer-mas" style="display: none;">Leer
-                                                más</a>
-                                        </div>
+                                    <!-- Badge de estado (asumiendo relación con tabla estados) -->
 
-
-                                        <!-- Géneros (asumiendo relación muchos a muchos) -->
-                                    </div>
                                 </div>
+
+                                <!-- Cuerpo principal -->
+                                <div class="card-body bg-light">
+                                    <!-- Descripción completa con lector más/menos -->
+                                    <div class="mb-3">
+                                        <p class="card-text serie-descripcion"
+                                            style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                                            {{ $serie->descripcion }}
+                                        </p>
+                                        <a href="#" class="text-primary small leer-mas" style="display: none;">Leer más</a>
+                                    </div>
+                                   
+
+                                    <!-- Géneros (asumiendo relación muchos a muchos) -->
+                                </div>
+                            </div>
                         </div>
                     @endforeach
                     <!-- Aquí se agregarán más tarjetas desde Laravel -->
@@ -181,3 +182,5 @@
 </body>
 
 </html>
+
+@endsection

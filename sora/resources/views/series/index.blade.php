@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -30,7 +33,6 @@
 
             <!-- Profile Info -->
             <h1 class="profile-name">Los piratas buenos</h1>
-            <p class="profile-subtitle">tururu ruru turu</p>
             <div class="d-flex justify-content-center align-items-center gap-2 mb-3">
                 <span class="badge editor-badge">Editor</span>
                 <span class="group-label">Grupo</span>
@@ -82,9 +84,11 @@
                     <!-- Contenedor de la tabla con sombra -->
                     <div class="table-container w-100">
                         <table class="table table-dark table-borderless">
-                            <thead style="background-color: #2f0c58; color: white;">
+                            <thead style="background-color: #421d3c; color: white;">
                                 <tr>
                                     <th scope="col">Título</th>
+                                    <th scope="col">Subtitulo</th>
+                                    <th scope="col">Generos</th>
                                     <th scope="col">Descripción</th>
                                     <th scope="col">Miniatura</th>
                                     <th scope="col">Última Actualización</th>
@@ -93,40 +97,57 @@
                             </thead>
                             <tbody>
                                 @foreach($series as $serie)
-                                    <tr>
-                                        <td>{{ $serie->titulo }}</td>
-                                        <td>{{ Str::limit($serie->descripcion, 50) }}</td>
-                                        <td>
-                                            <img src="{{ asset('storage/' . $serie->miniatura_vertical) }}"
-                                                class="img-thumbnail" style="height: 120px">
-                                        </td>
-                                        <td>{{ date('d/m/Y H:i', strtotime($serie->updated_at)) }}</td>
-                                        <td class="text-center align-middle">
-                                            <div class="d-flex justify-content-center gap-2">
-                                                <!-- Botón Show (puede ser un enlace o un botón dentro de un form si es necesario) -->
-                                                <form method="get"
-                                                    action="{{ route('serie.show', $serie->seriecreada_id) }}">
-                                                    <button type="submit" class="btn btn-primary btn-sm">Ver</button>
-                                                </form>
+                                                                <tr>
+                                                                    <td>{{ $serie->titulo }}</td>
+                                                                    <td>{{ $serie->subtitulo }}</td>
+                                                                    @php
+                                                                        $nombresGeneros = [
+                                                                            1 => 'Acción',
+                                                                            2 => 'Aventura',
+                                                                            3 => 'Drama',
+                                                                            4 => 'Harem',
+                                                                            5 => 'Romance',
+                                                                            6 => 'Seinen',
+                                                                            7 => 'Shojo',
+                                                                            8 => 'Shonen',
+                                                                            9 => 'Terror'
+                                                                        ];
+                                                                     @endphp
 
-                                                <!-- Botón Edit -->
-                                                <form method="get"
-                                                    action="{{ route('serie.edit', $serie->seriecreada_id) }}">
-                                                    <button type="submit" class="btn btn-warning btn-sm">Editar</button>
-                                                </form>
+                                                                    <td>{{ $nombresGeneros[(int) $serie->genero_id] ?? 'Desconocido' }}</td>
 
-                                                <!-- Botón Delete (usualmente va en un form POST o DELETE) -->
-                                                <form method="post"
-                                                    action="{{ route('serie.destroy', $serie->seriecreada_id) }}"
-                                                    onsubmit="return confirm('¿Estás seguro?')">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
-                                                </form>
-                                            </div>
-                                        </td>
+                                                                    <td>{{ Str::limit($serie->descripcion, 50) }}</td>
+                                                                    <td>
+                                                                        <img src="{{ asset('storage/' . $serie->miniatura_vertical) }}"
+                                                                            class="img-thumbnail" style="height: 120px">
+                                                                    </td>
+                                                                    <td>{{ date('d/m/Y H:i', strtotime($serie->updated_at)) }}</td>
+                                                                    <td class="text-center align-middle">
+                                                                        <div class="d-flex justify-content-center gap-2">
+                                                                            <!-- Botón Show (puede ser un enlace o un botón dentro de un form si es necesario) -->
+                                                                            <form method="get"
+                                                                                action="{{ route('serie.show', $serie->seriecreada_id) }}">
+                                                                                <button type="submit" class="btn btn-primary btn-sm">Ver</button>
+                                                                            </form>
 
-                                    </tr>
+                                                                            <!-- Botón Edit -->
+                                                                            <form method="get"
+                                                                                action="{{ route('serie.edit', $serie->seriecreada_id) }}">
+                                                                                <button type="submit" class="btn btn-warning btn-sm">Editar</button>
+                                                                            </form>
+
+                                                                            <!-- Botón Delete (usualmente va en un form POST o DELETE) -->
+                                                                            <form method="post"
+                                                                                action="{{ route('serie.destroy', $serie->seriecreada_id) }}"
+                                                                                onsubmit="return confirm('¿Estás seguro?')">
+                                                                                @csrf
+                                                                                @method('DELETE')
+                                                                                <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+                                                                            </form>
+                                                                        </div>
+                                                                    </td>
+
+                                                                </tr>
                                 @endforeach
                             </tbody>
                         </table>
@@ -140,7 +161,7 @@
                     <!-- Contenedor de la tabla con sombra -->
                     <div class="table-container w-100">
                         <table class="table table-dark table-borderless">
-                            <thead style="background-color: #2f0c58; color: white;">
+                            <thead style="background-color: #421d3c; color: white;">
                                 <tr>
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Rol</th>
@@ -178,3 +199,5 @@
 </body>
 
 </html>
+
+@endsection
