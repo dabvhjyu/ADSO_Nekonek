@@ -1,0 +1,281 @@
+/* Estilos personalizados con temática morado oscuro */
+
+/* Variables de colores */
+:root {
+    --darker-purple: #0f061a;
+    --dark-purple: #1a0d2a;
+    --medium-purple: #261331;
+    --light-medium-purple: #3a1d4a;
+    --accent-purple: #a67bd6;
+    --light-purple: #d4c1f0;
+}
+
+
+/* Clases de color de fondo */
+.bg-darker-purple {
+    background-color: var(--darker-purple) !important;
+}
+
+.bg-dark-purple {
+    background-color: var(--dark-purple) !important;
+}
+
+.bg-medium-purple {
+    background-color: var(--medium-purple) !important;
+}
+
+.bg-light-medium-purple {
+    background-color: var(--light-medium-purple) !important;
+}
+
+.bg-accent-purple {
+    background-color: var(--accent-purple) !important;
+}
+/* Clases de color de texto */
+.text-light-purple {
+    color: var(--light-purple) !important;
+}
+
+.text-accent-purple {
+    color: var(--accent-purple) !important;
+}
+.border-medium-purple {
+    border-color: var(--medium-purple) !important;
+}
+
+.btn-accent-purple {
+    background-color: var(--accent-purple);
+    color: white;
+    border: none;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-accent-purple:hover {
+    background-color: var(--light-medium-purple);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Estilos mejorados para el carrusel */
+.carousel {
+    height: 92vh;
+    background-color: var(--darker-purple);
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item {
+    height: 92vh;
+    position: relative;
+}
+
+.carousel-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.carousel-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(15, 6, 26, 0) 0%,
+        rgba(15, 6, 26, 0.5) 50%,
+        rgba(15, 6, 26, 0.9) 100%
+    );
+    z-index: 2;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 5rem;
+    left: 5rem;
+    text-align: left;
+    max-width: 600px;
+    z-index: 3;
+    padding: 0;
+    right: auto;
+}
+
+.carousel-caption h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.original-title {
+    opacity: 0.8;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.description {
+    max-width: 500px;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-indicators {
+    z-index: 5;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    z-index: 5;
+    width: 5%;
+}
+
+/* Estilos para rankings */
+.ranking-card {
+    height: 100%;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.ranking-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-bottom: 1px solid var(--medium-purple);
+}
+
+.ranking-item:last-child {
+    border-bottom: none;
+}
+
+.ranking-details {
+    display: none;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.ranking-item:hover .ranking-details {
+    display: block;
+}
+
+/* Estilos para tarjetas de género y series */
+.genre-card, .series-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    border: none;
+    overflow: hidden;
+}
+
+.genre-card:hover, .series-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+
+/* Estilos para pestañas */
+.purple-tab {
+    color: var(--light-purple);
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    margin: 0 0.25rem;
+    transition: all 0.3s ease;
+}
+
+.purple-tab:hover {
+    background-color: var(--light-medium-purple);
+    color: white;
+}
+
+.purple-tab.active {
+    background-color: var(--accent-purple) !important;
+    color: var(--darker-purple) !important;
+    font-weight: bold;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--accent-purple);
+    color: var(--darker-purple);
+}
+
+/* Estilos para las tarjetas de últimas publicaciones */
+.latest-publications .card {
+    transition: transform 0.3s ease;
+    border: none;
+    overflow: hidden;
+}
+
+.latest-publications .card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .carousel {
+        height: 70vh;
+    }
+    
+    .carousel-item {
+        height: 70vh;
+    }
+    
+    .carousel-caption {
+        bottom: 2rem;
+        left: 2rem;
+        max-width: 80%;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+    
+    .nav-pills {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .nav-pills .nav-link {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel {
+        height: 60vh;
+    }
+    
+    .carousel-item {
+        height: 60vh;
+    }
+    
+    .carousel-caption {
+        bottom: 1.5rem;
+        left: 1rem;
+        max-width: 90%;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+    
+    .original-title {
+        font-size: 1rem;
+    }
+    
+    .description {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 0.9rem;
+    }
+}

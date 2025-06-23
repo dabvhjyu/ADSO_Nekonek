@@ -1,0 +1,393 @@
+/* Global Styles */
+:root {
+    --dark-purple:   #0f061a;
+    --medium-purple: #211224;
+    --light-purple: #2e1733;
+    --accent-purple: #6a4692;
+    --bright-purple: #f6f5f7;
+    --border-purple: #491f53;
+    --text-light: #ffffff;
+    --text-muted: #a8a8b3;  
+  }
+
+
+  
+  body {
+    background-color: var(--dark-purple);
+    color: var(--text-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Profile Styles */
+  .profile-image-container {
+    width: 128px;
+    height: 128px;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--medium-purple);
+    border: 2px solid var(--accent-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .profile-placeholder {
+    color: var(--accent-purple);
+    font-size: 14px;
+  }
+  
+  .upload-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: var(--accent-purple);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .profile-name {
+    color: var(--bright-purple);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+  
+  .profile-subtitle {
+    color: var(--accent-purple);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .editor-badge {
+    background-color: var(--light-purple);
+    color: white;
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+  }
+  
+  .group-label {
+    color: var(--bright-purple);
+  }
+  
+  /* Stats */
+  .stats-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+  
+  /* Buttons */
+  .upload-btn {
+    background-color: var(--accent-purple);
+    color: white;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+  
+  .upload-btn:hover {
+    background-color: #a67bd6;;
+  }
+  
+  /* Tabs */
+  .custom-tabs {
+    border-bottom: 1px solid var(--border-purple);
+  }
+  
+  .custom-tabs .nav-link {
+    color: var(--text-muted);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    background-color: transparent;
+  }
+  
+  .custom-tabs .nav-link:hover {
+    color: var(--bright-purple);
+  }
+  
+  .custom-tabs .nav-link.active {
+    color: var(--bright-purple);
+    background-color: transparent;
+    border-bottom: 2px solid var(--bright-purple);
+  }
+  
+  /* Empty States */
+  .empty-title {
+    color: var(--bright-purple);
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  
+  .empty-subtitle {
+    color: var(--text-muted);
+  }
+  
+  /* Section Titles */
+  .section-title {
+    color: var(--bright-purple);
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  /* Series Cards */
+  .series-card {
+    background-color: var(--medium-purple);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+  
+  .series-cover {
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .series-title {
+    color: var(--bright-purple);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .series-chapters {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+  
+  .series-date {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+  }
+  
+  /* Modal Styles */
+  .modal-content {
+    background-color: var(--dark-purple);
+    color: var(--text-light);
+    border: 1px solid var(--border-purple);
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid var(--border-purple);
+  }
+  
+  .modal-header .btn-close {
+    filter: invert(1) brightness(200%);
+  }
+  
+  .modal-title {
+    color: var(--bright-purple);
+  }
+  
+  .modal-footer {
+    border-top: 1px solid var(--border-purple);
+  }
+  
+  .form-label {
+    color: var(--text-light);
+  }
+  
+  .form-control {
+    background-color: var(--medium-purple);
+    border: 1px solid var(--border-purple);
+    color: var(--text-light);
+  }
+  
+  .form-control:focus {
+    background-color: var(--medium-purple);
+    border-color: var(--accent-purple);
+    color: var(--text-light);
+    box-shadow: 0 0 0 0.25rem rgba(138, 92, 247, 0.25);
+  }
+  
+  .cover-upload-container {
+    border: 2px dashed var(--border-purple);
+    border-radius: 6px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-muted);
+  }
+  
+  .cover-preview {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .btn-primary {
+    background-color: var(--light-purple);
+    border-color: var(--light-purple);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--accent-purple);
+    border-color: var(--accent-purple);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border-color: var(--border-purple);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--medium-purple);
+    border-color: var(--border-purple);
+  }
+  
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  
+  /* ===== TABLAS RESPONSIVAS Y BOTONES ===== */
+  /* Estilos para hacer las tablas responsivas */
+  .table-container {
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  
+  .table {
+    margin-bottom: 0;
+  }
+  
+  .table-dark {
+    background-color: var(--medium-purple);
+    color: var(--text-light);
+  }
+  
+  .custom-table {
+    background-color: var(--medium-purple);
+    color: var(--text-light);
+  }
+  
+  .table th {
+    white-space: nowrap;
+    padding: 1rem;
+    font-weight: 600;
+    background-color: #6a4692;
+    color: white;
+  }
+  
+  .table td {
+    padding: 1rem;
+    vertical-align: middle;
+  }
+  
+  /* Estilos para el botón "Editar" */
+  /* Estilos para el botón "Editar" */
+  .btn-editar {
+    background-color: var(--accent-purple); /* Color morado */
+    color: rgb(253, 252, 254);
+    border: none;
+    padding: 0.25rem 0.5rem; /* Reduce el tamaño del botón */
+    font-size: 0.875rem; /* Reduce el tamaño del texto */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Borde superior */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    display: inline-flex; /* Alinea ícono y texto */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+  }
+  
+  .btn-editar:hover {
+    background-color: var(--bright-purple); /* Color morado más claro */
+  }
+  
+  /* Estilos para el botón "Eliminar" */
+  .btn-eliminar {
+    background-color: #dc3545; /* Color rojo */
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem; /* Reduce el tamaño del botón */
+    font-size: 0.875rem; /* Reduce el tamaño del texto */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Borde superior */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    display: inline-flex; /* Alinea ícono y texto */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+  }
+  
+  .btn-eliminar:hover {
+    background-color: #bb2d3b; /* Color rojo más oscuro */
+  }
+  
+  
+  
+  .img-thumbnail {
+    object-fit: cover;
+  }
+  
+  /* Media queries para responsividad */
+  @media (max-width: 992px) {
+    .table th, 
+    .table td {
+      padding: 0.75rem 0.5rem;
+      font-size: 0.9rem;
+    }
+    
+    .img-thumbnail {
+      max-width: 70px;
+      max-height: 100px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .table th, 
+    .table td {
+      padding: 0.5rem 0.4rem;
+      font-size: 0.85rem;
+    }
+    
+    .img-thumbnail {
+      max-width: 60px;
+      max-height: 90px;
+    }
+    
+    .btn-editar, 
+    .btn-eliminar {
+      display: block;
+      width: 50%;
+      margin: 0.25rem 0;
+      font-size: 0.85rem;
+      padding: 0.8rem 0.75rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .table th, 
+    .table td {
+      padding: 0.4rem 0.3rem;
+      font-size: 0.8rem;
+    }
+    
+    .img-thumbnail {
+      max-width: 50px;
+      max-height: 75px;
+    }
+  }

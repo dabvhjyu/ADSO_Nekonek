@@ -1,0 +1,218 @@
+/* Estilos personalizados con temática morado oscuro */
+
+/* Variables de colores */
+:root {
+  --darker-purple: #0f061a;
+  --dark-purple: #1a0d2a;
+  --medium-purple: #261331;
+  --light-medium-purple: #3a1d4a;
+  --accent-purple: #a67bd6;
+  --light-purple: #d4c1f0;
+}
+
+
+/* Clases de color de fondo */
+.bg-darker-purple {
+  background-color: var(--darker-purple) !important;
+}
+
+.bg-dark-purple {
+  background-color: var(--dark-purple) !important;
+}
+
+.bg-medium-purple {
+  background-color: var(--medium-purple) !important;
+}
+
+.bg-light-medium-purple {
+  background-color: var(--light-medium-purple) !important;
+}
+
+.bg-accent-purple {
+  background-color: var(--accent-purple) !important;
+}
+/* Clases de color de texto */
+.text-light-purple {
+  color: var(--light-purple) !important;
+}
+
+.text-accent-purple {
+  color: var(--accent-purple) !important;
+}
+.border-medium-purple {
+  border-color: var(--medium-purple) !important;
+}
+
+.btn-accent-purple {
+  background-color: var(--accent-purple);
+  color: white;
+  border: none;
+}
+
+.btn-accent-purple:hover {
+  background-color: var(--light-medium-purple);
+  color: white;
+}
+
+.carousel {
+  height: 92vh;
+  background-color: var(--darker-purple);
+}
+
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+.carousel-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      to bottom,
+      rgba(15, 6, 26, 0) 0%,
+      rgba(15, 6, 26, 0.5) 50%,
+      rgba(15, 6, 26, 0.9) 100%
+  );
+}
+
+.carousel-caption {
+  bottom: 5rem;
+  text-align: left;
+  max-width: 600px;
+}
+
+.original-title {
+  opacity: 0.8;
+  font-size: 1rem;
+}
+
+.description {
+  max-width: 500px;
+}
+
+/* Estilos para rankings */
+.ranking-card {
+  height: 100%;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  overflow: hidden;
+}
+
+.ranking-item {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border-bottom: 1px solid var(--medium-purple);
+}
+
+.ranking-item:last-child {
+  border-bottom: none;
+}
+
+.ranking-details {
+  display: none;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.ranking-item:hover .ranking-details {
+  display: block;
+}
+
+/* Estilos para tarjetas de género y series */
+.genre-card, .series-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  border: none;
+  overflow: hidden;
+}
+
+.genre-card:hover, .series-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+}
+
+/* Estilos para pestañas */
+.purple-tab {
+  color: var(--light-purple);
+  border-radius: 20px;
+  padding: 0.5rem 1.5rem;
+  margin: 0 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.purple-tab:hover {
+  background-color: var(--light-medium-purple);
+  color: white;
+}
+
+.purple-tab.active {
+  background-color: var(--accent-purple) !important;
+  color: var(--darker-purple) !important;
+  font-weight: bold;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--accent-purple);
+  color: var(--darker-purple);
+}
+
+/* Estilos para las tarjetas de últimas publicaciones */
+.latest-publications .card {
+  transition: transform 0.3s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.latest-publications .card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel {
+      height: 60vh;
+  }
+  
+  .carousel-caption {
+      bottom: 2rem;
+      padding-left: 1rem;
+  }
+  
+  .nav-pills {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 10px;
+  }
+  
+  .nav-pills .nav-link {
+      white-space: nowrap;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+      height: 50vh;
+  }
+  
+  .carousel-caption h1 {
+      font-size: 1.5rem;
+  }
+  
+  .description {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+  }
+}
+  
